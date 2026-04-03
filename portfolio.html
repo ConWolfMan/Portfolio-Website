@@ -1,0 +1,344 @@
+<!-- The following is the index page for an html page made e_portfolio
+ * for LabAssignment2
+ * in CS3600 
+ 
+ * For this assignment I may have gotten a little carried away, but I think it was worth it
+ -->
+
+ <html lang="en">
+    <head> <!-- Formatting things css/bootstrap -->
+        <title>Connor Wolfe | E_Portfolio</title> <!-- Displays what is shown in the viewport -->
+
+    <!-- enable bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- enable css -->
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            :root { /* color scheme, lets me set color scheme easier */
+                --main-color: #2E86C1;
+                --headerandfooter-color: #1B4F72;
+                --accent-color: #A569BD;
+                --background-color: #FDFEFE;
+                --text-color: #17202A;
+            }
+
+            body {
+                background-color: var(--background-color);
+                color: var(--text-color);
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            /*/// Header menu, formatting options, so that the user can navigate to the other pages ///*/
+            nav.navbar { /* formmating options for navgation bar, this is the header. Not to be confused with the header styling option for text and stuff*/
+                background-color: var(--headerandfooter-color); /* should be a different color from the background to set it apart*/
+                padding: 1rem 2rem;
+                position: sticky; /* makes the header stick to the top of the page when scrolling */
+                top: 0%;
+                z-index: 1000; /* ensures the header stays above other content */
+                border-bottom: 2px solid var(--accent-color); /* adds a border to the bottom of the header for visual separation */
+            }
+
+                /*// auto filled by vscode, adds some formatting options. Very helpful //*/
+                .navbar-brand { /* formatting for the name on the left of the header */
+                    color: var(--background-color);
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                .nav-link { /* formatting for the links on the right of the header */
+                    color: var(--background-color);
+                    font-size: 1.2rem;
+                    margin-left: 1rem;
+                }
+
+                .nav-link:hover { /* formatting for when the user hovers over the links on the right of the header */
+                    color: var(--accent-color);
+                }
+
+                .nav-link.active { /* formatting for the active link on the right of the header, should be different from the other links to show the user where they are */
+                    color: var(--accent-color);
+                    font-weight: bold;
+                }
+
+                /*// ___________________________________________________________________________________________________ //*/
+            /*/// ___________________________________________________________________________________________________________________________________________________________///*/
+
+            /*/// Body classes - note to self make seperate classes for body sections (makes life easier) ///*/
+
+                /*// Header/brand section (displays header and brand photo) //*/
+                header.top-header { /* formatting for the header section */
+                    background-color: var(--main-color);
+                    padding: 2rem;
+                    text-align: center;
+                    color: var(--background-color);
+                    border-bottom: 2px solid var(--accent-color); /* adds a border to the bottom of the header section for visual separation */
+                    display: flex;
+                    flex-direction: column;
+                }
+                    .top-header h1 { /* formatting for the name in the header section */
+                        font-size: 48px;
+                        margin-bottom: 1rem;
+                    }
+
+                    .top-header h2, h3, h4, h5, h6 { /* formatting for the other headers in the header section */
+                        font-size: 24px;
+                        margin-bottom: 1rem;
+                        color: var(--background-color);
+                    }
+                
+                    .top-header img { 
+                        width: 300px;
+                        height: auto;
+                    }
+
+                    .image-settings {
+                        display: flex;
+                        align-items: center ;
+                        justify-content: center;
+                        position: relative;
+                    }
+                /*// ____________ //*/
+
+                /*// Page section //*/
+                section.page-section { /* formatting for the about section */
+                    padding: 2rem;
+                    color: var(--text-color);
+                    border-bottom: 2px solid var(--accent-color);
+                }
+                    .page-section h2,
+                    .page-section h3,
+                    .page-section h4, 
+                    .page-section h5, 
+                    .page-section h6 { /* formatting for the header in the about section */
+                        text-align: center;
+                        color: var(--text-color);
+                        font-size: 32px;
+                        margin-bottom: 1rem;
+                    }
+
+                    .page-section p { /* formatting for the paragraph in the about section */
+                        text-align: center;
+                        font-size: 18px;
+                        line-height: 1.5;
+                    }
+
+                    .page-section dd { /* formatting for the definition list in the about section */
+                        margin-bottom: 1rem;
+                        text-align: center;
+                    }
+
+                    .page-section iframe {
+                        display: block; /*Lets me center the iframe*/
+                        height: 95%;
+                        width: 75%;
+                        min-width: auto;
+                        min-height: 1000px;
+                        margin: 0 auto; /* centers the iframe horizontally */
+                    }
+
+                    section.page-section:last-of-type {
+                        flex-grow: 1; /* allows the last section to take up any remaining space, pushing the footer to the bottom of the page */
+                    }
+
+                    .split-section { /* formatting for the split section */
+                        display: flex;
+                        gap: 2rem;
+                    }
+
+                        .split {
+                            flex: 1;
+                            min-width: 50%;
+                        }
+
+                        .split img {
+                            justify-content: center;
+                            width: 95%;
+                            height: auto;
+                        }
+
+                        .split iframe {
+                            height: 100%;
+                            width: 95%;
+                            min-width: 300px;
+                            min-height: 600px;
+                        }
+
+                /*// ____________ //*/
+
+            /*/// _________________________________________________________________________________________ ///*/
+
+            /*/// Footer menu, formatting options, so that the user can navigate to the other pages ///*/
+
+            footer { /* formatting for the footer, not to be confused with the footer styling option for text and stuff */
+                background-color: var(--headerandfooter-color); /* should be a different color from the background to set it apart*/
+                padding: 1rem 2rem;
+                position: sticky; /* makes the footer stick to the bottom of the page when scrolling */
+                bottom: 0;
+                z-index: 1000; /* ensures the footer stays above other content */
+                border-top: 2px solid var(--accent-color); /* adds a border to the top of the footer for visual separation */
+            }
+
+                /*// formatting options //*/
+                footer .footer-content { /* formatting for the content inside the footer */
+                    color: var(--background-color);
+                    font-size: 1rem;
+                    text-align: center;
+                }
+
+                footer .footer-content a { /* formatting for the links inside the footer */
+                    color: var(--background-color);
+                    text-decoration: none;
+                    margin: 0 0.5rem;
+                }
+                footer .footer-content a:hover { /* formatting for when the user hovers over the links inside the footer */
+                    color: var(--accent-color);
+                }
+            /*// ___________________________________________________________________________________________________ //*/
+
+        </style>
+    </head>
+
+    <body>
+    <!-- Page HeaderMenu -->
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">Connor Wolfe</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portfolio.html">Portfolio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sign_in.html">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sign_up.html">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    <!-- Page Header/Brand section -->
+        <header class="top-header">
+            <h1> Portfolio </h1>
+            <h2>
+                Work | Resume | GitHub </h2>
+            </div>
+        </header>
+
+    <!-- SubTerra Section -->
+    <section class="page-section">
+        <h3> SubTerra </h3>
+        <div class="split-section">
+            <div class="split">
+                <h2> Coursework | CS3383 FA25 </h2>
+                <p>
+                    Subterra was the semester long project for the CS3383: Software Engineering class. <br> <br>
+                    As the software engineer for my team, I was responsible for:
+                    <ul>
+                        <dd>Creating overall game structure</dd>
+                        <dd>Designing core systems</dd>
+                        <dd>Building main systems such as:</dd>
+                        <dd>The player Character</dd>
+                        <dd>Inventory System</dd>
+                        <dd>Player UI</dd>
+                        <dd>Aiding my teammates in struggles with the Unity game engine</dd>
+                    </ul>
+                </p>
+            </div>
+            <div class="split">
+                <a href="https://github.com/tylergehring/SubTerra">
+                    <img src="SubTerraPic.png" alt="SubTerra">
+                </a>
+                <p>
+                    This image links to the SubTerra GitHub repository where you can find the source code.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MuncherMuncher Section -->
+<section class="page-section">
+        <h3> MuncherMuncher </h3>
+        <div class="split-section">
+            <div class="split">
+                <h2> Game Jam | GDU & ACM Club(s) Game Jam 6 Spr2026 </h2>
+                <p>
+                    MuncherMuncher was a game made for the GDU & ACM Club(s) Game Jam 6 in Spring 2026. <br>
+                    Solo designed, developed, and published a copmplete playable game in 48 hours. <br>
+                </p>
+            </div>
+            <div class="split">
+                <a href="https://itch.io/jam/vandal-game-jam-5/rate/4340307">
+                    <img src="MuncherMuncherPic.png" alt="MuncherMuncher">
+                </a>
+                <p>
+                    This image links to the MuncherMuncher itch.io page where you can download and play the game for free.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WhitePaper Section -->
+    <section class="page-section">
+        <h3> WhitePaper </h3>
+        <div class="split-section">
+            <div class="split">
+                <h2> Coursework | ENGL3170 FA25 </h2>
+                <p>
+                    In ENGL3170 class I wrote a white paper comparing two websites/software against each other in terms of their usability. <br>
+                    In my white paper I compared the game engines Unity and Godot. <br>
+                    This project allowed me to build my skills in:
+                    <ul>
+                        <dd>Thoughtfully designing tests</dd>
+                        <dd>Critically examine software from the perspective of usability</dd>
+                        <dd>Writing a professional report of my findings</dd>
+                        <dd>Well documenting my process and findings</dd>
+                    </ul>
+                </p>
+            </div>
+            <div class="split">
+                <iframe src="EnglishWhitePaper.pdf" title="WhitePaper">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- MyResume Section -->
+    <section class="page-section">
+        <h3> Resume </h3>
+        <iframe src="CDWResume.pdf" title="Resume"></iframe>
+    </section>
+
+    <!-- Github section -->
+    <section class="page-section">
+        <a href="https://github.com/ConWolfMan">
+            <h3>
+                My GitHub
+            </h3>
+        </a>
+    </section>
+
+    <!-- Page FooterMenu -->
+    <footer>
+        <div class="footer-content">
+            &copy; 2026 Connor Wolfe. All rights reserved.
+            <a href="termandconditions.html">Terms and Conditions</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <a href="cookiepolicy.html">Cookie Policy</a>
+        </div>
+    </body>
+ </html>

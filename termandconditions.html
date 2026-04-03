@@ -1,0 +1,292 @@
+<!-- The following is the index page for an html page made e_portfolio
+ * for LabAssignment2
+ * in CS3600 
+ 
+ * For this assignment I may have gotten a little carried away, but I think it was worth it
+ -->
+
+ <html lang="en">
+    <head> <!-- Formatting things css/bootstrap -->
+        <title>Connor Wolfe | E_Portfolio</title> <!-- Displays what is shown in the viewport -->
+
+    <!-- enable bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- enable css -->
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            :root { /* color scheme, lets me set color scheme easier */
+                --main-color: #2E86C1;
+                --headerandfooter-color: #1B4F72;
+                --accent-color: #A569BD;
+                --background-color: #FDFEFE;
+                --text-color: #17202A;
+            }
+
+            body {
+                background-color: var(--background-color);
+                color: var(--text-color);
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            /*/// Header menu, formatting options, so that the user can navigate to the other pages ///*/
+            nav.navbar { /* formmating options for navgation bar, this is the header. Not to be confused with the header styling option for text and stuff*/
+                background-color: var(--headerandfooter-color); /* should be a different color from the background to set it apart*/
+                padding: 1rem 2rem;
+                position: sticky; /* makes the header stick to the top of the page when scrolling */
+                top: 0%;
+                z-index: 1000; /* ensures the header stays above other content */
+                border-bottom: 2px solid var(--accent-color); /* adds a border to the bottom of the header for visual separation */
+            }
+
+                /*// auto filled by vscode, adds some formatting options. Very helpful //*/
+                .navbar-brand { /* formatting for the name on the left of the header */
+                    color: var(--background-color);
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                .nav-link { /* formatting for the links on the right of the header */
+                    color: var(--background-color);
+                    font-size: 1.2rem;
+                    margin-left: 1rem;
+                }
+
+                .nav-link:hover { /* formatting for when the user hovers over the links on the right of the header */
+                    color: var(--accent-color);
+                }
+
+                .nav-link.active { /* formatting for the active link on the right of the header, should be different from the other links to show the user where they are */
+                    color: var(--accent-color);
+                    font-weight: bold;
+                }
+
+                /*// ___________________________________________________________________________________________________ //*/
+            /*/// ___________________________________________________________________________________________________________________________________________________________///*/
+
+            /*/// Body classes - note to self make seperate classes for body sections (makes life easier) ///*/
+
+                /*// Header/brand section (displays header and brand photo) //*/
+                header.top-header { /* formatting for the header section */
+                    background-color: var(--main-color);
+                    padding: 2rem;
+                    text-align: center;
+                    color: var(--background-color);
+                    border-bottom: 2px solid var(--accent-color); /* adds a border to the bottom of the header section for visual separation */
+                    display: flex;
+                    flex-direction: column;
+                }
+                    .top-header h1 { /* formatting for the name in the header section */
+                        font-size: 48px;
+                        margin-bottom: 1rem;
+                    }
+
+                    .top-header h2, h3, h4, h5, h6 { /* formatting for the other headers in the header section */
+                        font-size: 24px;
+                        margin-bottom: 1rem;
+                        color: var(--background-color);
+                    }
+                
+                    .top-header img { 
+                        width: 300px;
+                        height: auto;
+                    }
+
+                    .image-settings {
+                        display: flex;
+                        align-items: center ;
+                        justify-content: center;
+                        position: relative;
+                    }
+                /*// ____________ //*/
+
+                /*// Page section //*/
+                section.page-section { /* formatting for the about section */
+                    padding: 2rem;
+                    color: var(--text-color);
+                    border-bottom: 2px solid var(--accent-color);
+                }
+                    .page-section h2,
+                    .page-section h3,
+                    .page-section h4, 
+                    .page-section h5, 
+                    .page-section h6 { /* formatting for the header in the about section */
+                        text-align: center;
+                        color: var(--text-color);
+                        font-size: 32px;
+                        margin-bottom: 1rem;
+                    }
+
+                    .page-section p { /* formatting for the paragraph in the about section */
+                        text-align: center;
+                        font-size: 18px;
+                        line-height: 1.5;
+                    }
+
+                    .page-section dd { /* formatting for the definition list in the about section */
+                        margin-bottom: 1rem;
+                        text-align: center;
+                    }
+
+                    .page-section iframe {
+                        justify-content: center;
+                        height: 95%;
+                        width: 75%;
+                        min-width: auto;
+                        min-height: 1000px;
+                    }
+
+                    section.page-section:last-of-type {
+                        flex-grow: 1; /* allows the last section to take up any remaining space, pushing the footer to the bottom of the page */
+                    }
+
+                    .form-section { /* formatting for the form */
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+                        .form-section form {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1rem;
+                            width: 100%;
+                            max-width: 400px;
+                        }
+
+                        .form-section label {
+                            font-weight: bold;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        button {
+                            padding: 5px 10px; /* size of buttons */
+                            border-radius: 6px; /* rounding the sides */
+                        }
+
+                        button[type="reset"],
+                        button[type="submit"] {
+                            background: var(--background-color);
+                            color: var(--text-color);
+                        }
+
+                        button[type="reset"]:hover,
+                        button[type="submit"]:hover {
+                            background: var(--main-color);
+                        }
+
+                    .split-section { /* formatting for the split section */
+                        display: flex;
+                        gap: 2rem;
+                    }
+
+                        .split {
+                            flex: 1;
+                            min-width: 50%;
+                        }
+
+                        .split img {
+                            justify-content: center;
+                            width: 95%;
+                            height: auto;
+                        }
+
+                        .split iframe {
+                            height: 100%;
+                            width: 95%;
+                            min-width: 300px;
+                            min-height: 600px;
+                        }
+
+                /*// ____________ //*/
+
+            /*/// _________________________________________________________________________________________ ///*/
+
+            /*/// Footer menu, formatting options, so that the user can navigate to the other pages ///*/
+
+            footer { /* formatting for the footer, not to be confused with the footer styling option for text and stuff */
+                background-color: var(--headerandfooter-color); /* should be a different color from the background to set it apart*/
+                padding: 1rem 2rem;
+                position: sticky; /* makes the footer stick to the bottom of the page when scrolling */
+                bottom: 0;
+                z-index: 1000; /* ensures the footer stays above other content */
+                border-top: 2px solid var(--accent-color); /* adds a border to the top of the footer for visual separation */
+            }
+
+                /*// formatting options //*/
+                footer .footer-content { /* formatting for the content inside the footer */
+                    color: var(--background-color);
+                    font-size: 1rem;
+                    text-align: center;
+                }
+
+                footer .footer-content a { /* formatting for the links inside the footer */
+                    color: var(--background-color);
+                    text-decoration: none;
+                    margin: 0 0.5rem;
+                }
+                footer .footer-content a:hover { /* formatting for when the user hovers over the links inside the footer */
+                    color: var(--accent-color);
+                }
+            /*// ___________________________________________________________________________________________________ //*/
+
+        </style>
+    </head>
+
+    <body>
+    <!-- Page HeaderMenu -->
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">Connor Wolfe</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sign_in.html">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sign_up.html">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    <!-- Page Header/Brand section -->
+        <header class="top-header">
+            <h1> Terms and Conditions </h1>
+            </div>
+        </header>
+
+    <!-- Privacy Policy Section -->
+    <section class="page-section">
+        <p>
+            none lmao
+        </p>
+        <div class="form-section">
+            <button type="submit">Agree to Terms and Conditions</button>
+        </div>
+    </section>
+
+    <!-- Page FooterMenu -->
+    <footer>
+        <div class="footer-content">
+            &copy; 2026 Connor Wolfe. All rights reserved.
+            <a href="termandconditions.html">Terms and Conditions</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <a href="cookiepolicy.html">Cookie Policy</a>
+        </div>
+    </body>
+ </html>
